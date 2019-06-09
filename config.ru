@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'src/sturm/api.rb'
+require_relative 'src/image_uploader/api.rb'
 
-run Sturm::API
+run ImageUploader::API
