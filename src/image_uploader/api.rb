@@ -2,7 +2,7 @@
 
 require 'grape'
 
-module Sturm
+module ImageUploader
   ##
   # Main API instatiation
   class API < Grape::API
