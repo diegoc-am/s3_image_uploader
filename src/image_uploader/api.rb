@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 require 'grape'
+require 'dotenv/load'
+
+require_relative 'apiv1'
+
+Dotenv.load('./config/.env')
 
 module ImageUploader
   ##
