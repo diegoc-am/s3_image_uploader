@@ -10,6 +10,17 @@ Uploads images to [S3][s3], using a front end as disguise
 bundle install
 ```
 
+### Environment Variables
+
+The following variables are required during runtime
+
+```bash
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_REGION=
+AWS_BUCKET=
+```
+
 ### Shipping
 ```bash
 docker build . -t image_uploader:latest
