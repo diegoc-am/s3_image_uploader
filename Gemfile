@@ -2,6 +2,8 @@
 
 source 'https://rubygems.org'
 
+gem 'aws-sdk-s3', '~> 1.42'
+gem 'dotenv', '~> 2.7'
 gem 'grape', '~> 1.0'
 gem 'puma', '~> 3.11'
 gem 'rake', '~> 12.3'
@@ -14,6 +16,7 @@ end
 group :development, :test do
   gem 'minitest', '~> 5.11'
   gem 'minitest-reporters', '~> 1.2'
+  gem 'pry', '~> 0.12'
   gem 'rack-test', '~> 1.0'
   gem 'simplecov', '~> 0.16'
 end
