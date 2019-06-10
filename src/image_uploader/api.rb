@@ -21,6 +21,8 @@ module ImageUploader
       { status: :ok }
     end
 
+    mount APIv1
+
     rescue_from Aws::Errors::ServiceError do |e|
       LOGGER.error(e.message)
       error!({ message: 'service is unavailable' }, 500)
