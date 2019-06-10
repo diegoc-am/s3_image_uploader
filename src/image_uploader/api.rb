@@ -2,6 +2,7 @@
 
 require 'grape'
 require 'dotenv/load'
+require 'logger'
 
 require_relative 'apiv1'
 
@@ -14,8 +15,21 @@ module ImageUploader
     format :json
     prefix :api
 
+    LOGGER = Logger.new(STDOUT).tap { |l| l.level = ENV['LOG_LEVEL'] || 'ERROR' }.freeze
+
     get '/status' do
       { status: :ok }
     end
+
+    rescue_from Aws::Errors::ServiceError do |e|
+      LOGGER.error(e.message)
+      error!({ message: 'service is unavailable' }, 500)
+    end
+
+    rescue_from Grape::Exceptions::ValidationErrors do |e|
+      error!(e, 400)
+    end
+
+    rescue_from :all
   end
 end
