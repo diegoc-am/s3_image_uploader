@@ -6,7 +6,7 @@ gem 'aws-sdk-s3', '~> 1.42'
 gem 'dotenv', '~> 2.7'
 gem 'grape', '~> 1.0'
 gem 'puma', '~> 3.12'
-gem 'rack', '~> 2.1'
+gem 'rack', '~> 2.2'
 gem 'rack-contrib', '~> 2.1'
 gem 'rake', '~> 12.3'
 
